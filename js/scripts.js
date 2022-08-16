@@ -1,7 +1,7 @@
 document.getElementById("adicionar").addEventListener("click", addTask);
 
 //Sortable.js
-const Dragarea = document.getElementsByClassName("container")[1];
+const Dragarea = document.getElementsByClassName("container")[0];
 new Sortable(Dragarea , {
 animation: 400
 })
@@ -22,28 +22,39 @@ var agora = dd + '/' + mm + '/' + yyyy;
 var hora = data.getHours() + ':' + String(data.getMinutes()).padStart(2, "0");
 
 
-var taskList = document.getElementsByClassName('container')[1]
-//Parâmetros: )texto
+var taskList = document.querySelector('.container');
+
 function addTask(){
-    //alert('oi')
     let task = document.createElement('div');
     task.className = "task-row";
     task.style.display = "flex";
 
     let taskContent = document.querySelector("#taskContent").value;
-    //alert(taksContent);
     
 
-    //task.innerHTML = '<div class="date content">19/06/2022<br>16:33</div><div class="task content"> ' +  taksContent + '</div><div class="done content"><a href=""><i class="bi bi-check"></i></a></div><div class="delete content"><a href=""><i class="bi bi-trash"></i></a></div><div class="menu content"><a href=""><i class="bi bi-list"></i></a></div>';
     task.innerHTML = '<div class="date content"> ' + agora + '<br>'+ hora + '</div><div class="task content"> ' + taskContent + '</div><div class="buttons content"><a href=""><i class="bi bi-check"></i></a><a href=""><i class="bi bi-trash"></i></a><a href=""><i class="bi bi-list"></i></a></div>';
 
     taskContent.innerHTML = '';
-    document.getElementsByClassName('container')[1].appendChild(task);
-
+    document.querySelector('.container').appendChild(task);
 }
 
+function createTask(){
+    let task = document.createElement('div');
+    task.className = 'task-row';
+    task.style.display = 'flex';
 
-//Objetos (Exemplo Ruim)
+    
+    let taskDate = document.createElement('div');
+    
+    
+    let taskContent = document.createElement('div');
+    
+    
+    let taskButtons = document.createElement('div');
+    
 
-//Etruturas Condicionais
-//For, forin, for off, while, do while
+
+    task.appendChild(taskDate);
+    task.appendChild(taskContent);
+    task.appendChild(taskButtons);
+}

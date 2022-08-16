@@ -9,10 +9,15 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+body{
+    background-color: aliceblue;
+}
+
 .container{
     max-width: 900px;
-    margin: 0 auto 10px;
-    /* border: 1px solid forestgreen; */
+    margin: 50px auto 100px;
+    background-color: #FFF;
+    border: 1px solid forestgreen;
     text-align: center;
     height: 100%;
 }
@@ -29,7 +34,7 @@
 #adicionar{
     box-sizing: border-box;
     color: #FFF;
-    background-color: blue;
+    background-color: rgb(83, 83, 221);
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
