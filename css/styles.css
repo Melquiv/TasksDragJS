@@ -54,6 +54,12 @@ body{
     font-size: 30px;
 }
 
+
+.bi-check,
+.bi-trash{
+    cursor: pointer;
+}
+
 .bi-check::before {
     color: blue;
 }
