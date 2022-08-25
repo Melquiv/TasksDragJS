@@ -3,6 +3,7 @@ document.getElementById("adicionar").addEventListener("click", createTask);
 //Sortable.js
 const Dragarea = document.getElementsByClassName("container")[0];
 new Sortable(Dragarea , {
+handle: '.bi-list',
 animation: 300
 })
 
@@ -23,6 +24,17 @@ function getDate(){
 }
 
 
+function getTaskText(){
+    return document.querySelector("#taskContent").value;
+}
+
+function cleanTaskText(){
+    document.querySelector("#taskContent").value = "";
+    document.querySelector("#taskContent").focus();
+}
+
+
+
 function createTask(){
     let task = document.createElement('div');
     task.className = 'task-row';
@@ -31,12 +43,28 @@ function createTask(){
     
     let taskDate = document.createElement('div');
     taskDate.className = 'date content';
-    taskDate.innerHTML = getDate();
+    
+
+    let taskDateDiv = document.createElement('div');
+    taskDateDiv.innerHTML = getDate();
+    
+
+    
+    let btn2 = document.createElement('a')
+    let ico2 = document.createElement('i');
+    ico2.className = 'bi bi-square'; 
+    btn2.appendChild(ico2);
+
+
+
+    taskDate.appendChild(taskDateDiv);
+    taskDate.appendChild(btn2);
+
 
 
     let taskContent = document.createElement('div');
-    taskContent.className = 'task content';
-    taskContent.innerHTML = document.querySelector("#taskContent").value;
+    taskContent.className = 'task content';    
+    taskContent.innerHTML = getTaskText();
 
     let taskButtons = document.createElement('div');
     taskButtons.className = 'buttons content';
@@ -45,28 +73,42 @@ function createTask(){
         let ico1 = document.createElement('i');
         ico1.className = 'bi bi-trash'; 
         btn1.appendChild(ico1);
-        taskButtons.appendChild(btn1);
 
-        //HERE
-        btn1.addEventListener('click', function(){
-            alert('a');
-        });
 
-        let btn2 = document.createElement('a')
-        let ico2 = document.createElement('i');
-        ico2.className = 'bi bi-check'; 
-        btn2.appendChild(ico2);
-        taskButtons.appendChild(btn2);
+        
 
         let btn3 = document.createElement('a')
         let ico3 = document.createElement('i');
         ico3.className = 'bi bi-list'; 
         btn3.appendChild(ico3);
-        taskButtons.appendChild(btn3);
+    
+   
+            taskButtons.appendChild(btn1);
+            taskButtons.appendChild(btn3);
 
+        
     task.appendChild(taskDate);
     task.appendChild(taskContent);
     task.appendChild(taskButtons);
 
     document.querySelector('.container').appendChild(task);
+
+   cleanTaskText();
+
+
+
+   //Função dos botões: Excluir, Feito
+    btn1.addEventListener('click', () => task.remove());
+
+    // btn2.addEventListener('click', () => taskContent.className += " done");
+    btn2.addEventListener('click', function(){
+        if(taskContent.className == 'task content'){
+            taskContent.className += " done";
+            ico2.className = "bi bi-check-square";
+        }else{
+            taskContent.className = 'task content';  
+            ico2.className = "bi bi-square";
+        }
+        });
+        
 }

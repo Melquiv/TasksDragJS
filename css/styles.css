@@ -10,14 +10,32 @@
 }
 
 body{
-    background-color: aliceblue;
+    height: 90hv;
+}
+
+.content-header-container h1{
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.date{
+    display: flex;
+    align-items: center;
+}
+
+.content-header-container{
+    max-width: 600px;
+    margin: 100px auto 10px;
+    background-color: #FFF;
+    /* border: 1px solid forestgreen; */
+    text-align: center;    
 }
 
 .container{
-    max-width: 900px;
-    margin: 50px auto 100px;
+    max-width: 600px;
+    margin: 0 auto;
     background-color: #FFF;
-    border: 1px solid forestgreen;
+    /* border: 1px solid forestgreen; */
     text-align: center;
     height: 100%;
 }
@@ -50,19 +68,37 @@ body{
     display: none;
 }
 
+.task.content{
+    font-size: 1.6rem;
+}
+
 .task-row a{
     font-size: 30px;
 }
 
 
-.bi-check,
+.bi-square{
+    margin: 0 10px;
+}
+
+
+.bi-check-square,
+.bi-square,
 .bi-trash{
+    margin: 0 5px;
     cursor: pointer;
 }
 
-.bi-check::before {
+
+.bi-check-square::before{
     color: blue;
 }
+
+.bi-square::before{
+    color: blue;
+}
+
+
 .bi-trash::before{
     color: blue;
 }
@@ -75,4 +111,18 @@ body{
 
 div.delete{
     justify-self: flex-end;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+.footer{
+    width: 100%;
+    bottom: 10px;
+    text-align: center;
+}
+
+.footer h2{
+    font-size: 1.1em;
 }
