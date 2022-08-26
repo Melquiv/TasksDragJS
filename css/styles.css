@@ -11,11 +11,8 @@
 
 body{
     height: 90hv;
-}
-
-.content-header-container h1{
-    text-align: left;
-    margin-bottom: 30px;
+    background: rgb(123,223,242);
+    background: radial-gradient(circle, rgba(123,223,242,1) 16%, rgba(178,247,239,1) 79%);
 }
 
 .date{
@@ -25,34 +22,56 @@ body{
 
 .content-header-container{
     max-width: 600px;
-    margin: 100px auto 10px;
-    background-color: #FFF;
-    /* border: 1px solid forestgreen; */
+    margin: 80px auto 10px;
     text-align: center;    
+}
+
+.content-header-container h4,
+.content-header-container h1{
+    color: #EFF7F6;
+    text-align: left;
+}
+
+.content-header-container h4{
+    margin-bottom: 30px;
 }
 
 .container{
     max-width: 600px;
+    height: 70vh;
     margin: 0 auto;
-    background-color: #FFF;
-    /* border: 1px solid forestgreen; */
+    background-color: transparent;
     text-align: center;
-    height: 100%;
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.63); 
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.63);
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: #EFF7F6;
 }
 
 .form input[type="text"]{
-    width: 50%;
-    height: 40px;
+    width: 45%;
+    height: 25px;
     font-size: 17px;
     margin-bottom: 10px;
-    /* background-color: aqua; */
-    
+    padding: 10px;
+    border-radius: 17px;
+    border: none;
+    background-color: rgba(247, 214, 224, 0.9);
+    transition: .5s;
 }
+
+.form input[type="text"]:focus{
+    outline: none;
+    background-color: #EFF7F6;
+}
+
 
 #adicionar{
     box-sizing: border-box;
-    color: #FFF;
-    background-color: rgb(83, 83, 221);
+    font-size: 1.2em;
+    background-color: #F2B5D4;
+    color: aliceblue;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
@@ -65,11 +84,12 @@ body{
     justify-content: space-between;
     align-items: center;
     margin: 5px;
-    display: none;
 }
 
 .task.content{
     font-size: 1.6rem;
+    width: 60%;
+    text-align: left;
 }
 
 .task-row a{
@@ -118,11 +138,13 @@ div.delete{
 }
 
 .footer{
+    position: fixed;
     width: 100%;
-    bottom: 10px;
+    bottom: 5px;
     text-align: center;
 }
 
 .footer h2{
+    color: rgb(190, 190, 190);
     font-size: 1.1em;
 }
