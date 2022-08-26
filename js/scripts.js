@@ -1,4 +1,15 @@
+
 document.getElementById("adicionar").addEventListener("click", createTask);
+
+
+document.getElementById("taskContent").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+
+    event.preventDefault();
+    document.getElementById("adicionar").click();
+  }
+});
+
 
 
 window.onload = function(){

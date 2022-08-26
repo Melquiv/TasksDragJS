@@ -26,15 +26,28 @@ body{
     text-align: center;    
 }
 
-.content-header-container h4,
-.content-header-container h1{
-    color: #EFF7F6;
+.header-box h4,
+.header-box h1{
+    color: #7BDFF2;
     text-align: left;
 }
 
-.content-header-container h4{
-    margin-bottom: 30px;
+.header-box h4{
+    margin-top: 10px;
 }
+
+.header-box{
+    height: 100px;
+    background-image: url(../img/check.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
 
 .container{
     max-width: 600px;
@@ -47,7 +60,9 @@ body{
     overflow: scroll;
     overflow-x: hidden;
     background-color: #EFF7F6;
+    background: rgba(255, 255, 255, 0.3);
 }
+
 
 .form input[type="text"]{
     width: 45%;
@@ -79,7 +94,8 @@ body{
 
 
 .task-row{
-    background-color: rgb(184, 190, 190);
+    background: rgb(244,194,217);
+    background: radial-gradient(circle, rgba(244,194,217,1) 41%, rgba(242,181,212,1) 58%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,6 +103,7 @@ body{
 }
 
 .task.content{
+    color: #FFF;
     font-size: 1.6rem;
     width: 60%;
     text-align: left;
@@ -97,10 +114,6 @@ body{
 }
 
 
-.bi-square{
-    margin: 0 10px;
-}
-
 
 .bi-check-square,
 .bi-square,
@@ -110,21 +123,14 @@ body{
 }
 
 
+.bi-list::before,
+.bi-trash::before,
+.bi-square::before,
 .bi-check-square::before{
-    color: blue;
-}
-
-.bi-square::before{
-    color: blue;
-}
-
-
-.bi-trash::before{
-    color: blue;
+    color: #7ce1f5;
 }
 
 .bi-list::before{
-    color: blue;
     cursor: n-resize;
 }
 
